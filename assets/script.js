@@ -1,3 +1,8 @@
+var saveButton = document.getElementById("btn");
+
+
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -21,3 +26,50 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+
+var today = dayjs();
+
+$('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
+
+$('btn')
+
+
+saveButton.addEventListener("click", function(event) {
+	event.preventDefault();
+
+  var description = {
+    dayPlan: description.value,
+    comment: comment.value.trim()
+  };
+
+  localStorage.setItem("descriptionStringify", JSON.stringify(description));
+  	localStorage.setItem("description", description);
+
+  localStorage.setItem("ArrayStringify", JSON.stringify(["description", 1,2 ]));
+	localStorage.setItem("Array", ["description", 1,2 ]);
+
+	renderMessage();
+
+});
+
+function renderMessage() {
+ 
+	//Object Getting
+  var lastGrade = JSON.parse(localStorage.getItem("descriptionStringify"));
+  // var lastGrade = localStorage.getItem("description");
+  
+  //Array Getting
+  var arr = JSON.parse(localStorage.getItem("ArrayStringify"));
+  console.log(arr[0])//"description" Beacause ["description", 1,2 ]
+
+  var arrStr = localStorage.getItem("Array");
+  // arrStr = "description,1,2"
+  
+  console.log(arrStr[0])//s Beacuse "description,1,2"
+  if (lastGrade !== null) {
+    document.querySelector(".message").textContent = lastGrade.student + 
+    " received a/an " + lastGrade.grade
+  }
+}
+
