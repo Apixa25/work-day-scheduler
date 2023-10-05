@@ -1,12 +1,21 @@
-var saveButton = document.getElementById("btn");
+$(document).ready(function() {
+
+var today = dayjs();
+
+$('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
+
+// Saves the notes
+function saveNotes() {
+  localStorage.setItem("myDay", JSON.stringify(myDay));
+}
+function displayNotes() {
+  myDay.forEach(function (_thisHour) {
+    $('#${_thisHour.id}').val(_thisHour.reminder)
+  });
+}
 
 
 
-
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -28,48 +37,8 @@ $(function () {
 });
 
 
-var today = dayjs();
-
-$('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
-
-$('btn')
 
 
-saveButton.addEventListener("click", function(event) {
-	event.preventDefault();
-
-  var description = {
-    dayPlan: description.value,
-    comment: comment.value.trim()
-  };
-
-  localStorage.setItem("descriptionStringify", JSON.stringify(description));
-  	localStorage.setItem("description", description);
-
-  localStorage.setItem("ArrayStringify", JSON.stringify(["description", 1,2 ]));
-	localStorage.setItem("Array", ["description", 1,2 ]);
-
-	renderMessage();
-
+$("saveB").on("click", function(){
+  alert("Button clicked!");
 });
-
-function renderMessage() {
- 
-	//Object Getting
-  var lastGrade = JSON.parse(localStorage.getItem("descriptionStringify"));
-  // var lastGrade = localStorage.getItem("description");
-  
-  //Array Getting
-  var arr = JSON.parse(localStorage.getItem("ArrayStringify"));
-  console.log(arr[0])//"description" Beacause ["description", 1,2 ]
-
-  var arrStr = localStorage.getItem("Array");
-  // arrStr = "description,1,2"
-  
-  console.log(arrStr[0])//s Beacuse "description,1,2"
-  if (lastGrade !== null) {
-    document.querySelector(".message").textContent = lastGrade.student + 
-    " received a/an " + lastGrade.grade
-  }
-}
-
