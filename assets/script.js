@@ -1,18 +1,29 @@
+// displays the time
+var today = dayjs();
+$('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
+
+
 // wraps the code so that nothing runs before everythign is loaded
 $(document).ready(function() {
 // this is the click listener for the "save buttons"
-  $(".saveBtn").on("click", function ()) {
+  $(".saveBtn").on("click", function () {
 // text variable location (which save button)
     var text = $(this).siblings(".description").val();
 // time variable for when the button was clicked (when)
     var time = $(this).parent().attr("id");
-  }
-localStorage.setItem(time, text);
+
+// this will save the user data to local storage
+    localStorage.setItem(time, text);
+  });
+
+// button to clear the fields and the local storage
+$('#clearFieldsBtn').click(function (event) {
+  event.preventDefault;
+  $('textarea').val("");
+  localStorage.clear();
+});
 
 
-// displays the time
-var today = dayjs();
-$('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
 
 // // Saves the notes to local storage
 // function saveNotes() {
@@ -45,11 +56,4 @@ $('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
-
-
-
-
-$("saveB").on("click", function(){
-  alert("Button clicked!");
 });
