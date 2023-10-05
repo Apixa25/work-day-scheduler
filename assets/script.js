@@ -24,6 +24,28 @@ $('#clearFieldsBtn').click(function (event) {
 });
 
 
+$('.time-block').each(function () {
+  var blockTime = parseInt($(this).attr('id').split('hour')[1]);
+
+// adds or removes the class depending on the time
+// this is what will determine what color the blocks are
+if (blockTime < timeNow) {
+  $(this).removeClass('future');
+  $(this).removeClass('present');
+  $(this).addClass('past');
+}
+else if (blockTime === timeNow) {
+  $(this).removeClass('past');
+  $(this).removeClass('future');
+  $(this).addClass('present');
+}
+else {
+  $(this).removeClass('present');
+  $(this).removeClass('past');
+  $(this).addClass('future');
+}
+
+});
 
 // // Saves the notes to local storage
 // function saveNotes() {
