@@ -1,18 +1,29 @@
+// wraps the code so that nothing runs before everythign is loaded
 $(document).ready(function() {
+// this is the click listener for the "save buttons"
+  $(".saveBtn").on("click", function ()) {
+// text variable location (which save button)
+    var text = $(this).siblings(".description").val();
+// time variable for when the button was clicked (when)
+    var time = $(this).parent().attr("id");
+  }
+localStorage.setItem(time, text);
 
+
+// displays the time
 var today = dayjs();
-
 $('#1a').text(today.format('h:mm A dddd MMM D, YYYY'));
 
-// Saves the notes
-function saveNotes() {
-  localStorage.setItem("myDay", JSON.stringify(myDay));
-}
-function displayNotes() {
-  myDay.forEach(function (_thisHour) {
-    $('#${_thisHour.id}').val(_thisHour.reminder)
-  });
-}
+// // Saves the notes to local storage
+// function saveNotes() {
+//   localStorage.setItem("myDay", JSON.stringify(myDay));
+// }
+// // pulls the notes back in from local storage
+// function displayNotes() {
+//   myDay.forEach(function (_thisHour) {
+//     $('#${_thisHour.id}').val(_thisHour.reminder)
+//   });
+// }
 
 
 
