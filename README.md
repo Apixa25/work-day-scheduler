@@ -7,9 +7,9 @@
 | HTML            |                  [https://en.wikipedia.org/wiki/HTML](https://en.wikipedia.org/wiki/HTML)                   |
 | CSS             |         [https://www.w3schools.com/css/css_intro.asp](https://www.w3schools.com/css/css_intro.asp)          |
 | Git             | [https://www.atlassian.com/git/tutorials/what-is-git](https://www.atlassian.com/git/tutorials/what-is-git/) |
-| jQuery          |                               [https://jqueryui.com/](https://jqueryui.com/)                               |
-| JavaScript      |                         [https://www.javascript.com/](https://www.javascript.com/)                         |
-| Bootstrap       |                           [https://getbootstrap.com/](https://getbootstrap.com/)                           |
+| jQuery          |                               [https://jqueryui.com/](https://jqueryui.com/)                                |
+| JavaScript      |                         [https://www.javascript.com/](https://www.javascript.com/)                          |
+| Bootstrap       |                           [https://getbootstrap.com/](https://getbootstrap.com/)                            |
 
 ## Description
 
@@ -19,7 +19,7 @@ This is a simple workday planner. It includes the time blocks of a “normal” 
 
 I built this to show my ability to work with JavaScript and jQuery. The HTML is coded using Bootstrap extensively to make the forms and set the custom CSS elements. Where it gets interesting is the use of JavaScript and jQuery to make the functionality. What they do is allow each of the time boxes to be treated independently. A user can save info to each box. Also, there is a cool color effect built that shows the current time block in red, the future in green and the past in grey. These color blocks shift in real-time. This was accomplished with day.js and jQuery together.
 
-## Take A Look At The Day Scheduler In Action!
+## Take A Look At The Work Day Scheduler In Action!
 
 ![Site Langing Page](./05-third-party-apis-homework-demo.gif)
 
